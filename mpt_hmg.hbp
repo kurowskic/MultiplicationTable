@@ -1,0 +1,11 @@
+mpt_hmg.prg
+MakeMultiplicationTable.prg
+DeleteMultiplicationTable.prg
+About.prg
+AutoAdjustControls.prg
+ctklib.prg
+EndTheProgram.prg
+MoveActiveWindow.prg
+Show_TitleBar_HMG.prg
+CenterMainWindow.prg
+CenterModalWindow.prg
