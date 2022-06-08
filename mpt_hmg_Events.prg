@@ -3,9 +3,9 @@ PROCEDURE win_main_OnInit()
 *-----------------------------------------------------------------------------*
 
   win_Main.Hide
-    
+
   AutoAdjustControls( "win_Main" )
-  
+
   MakeMultiplicationTable()
 
   CenterMainWindow()

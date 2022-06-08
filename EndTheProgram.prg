@@ -37,8 +37,8 @@ PROCEDURE EndTheProgram()
 
 
     ON KEY ALT+F4 OF win_EndTheProgram ACTION { || NIL }
-	
-	
+
+
     AADD( aFrm , { "win_EndTheProgram"    , ;
                  win_EndTheProgram.Row  , ;
                  win_EndTheProgram.Col  , ;
