@@ -12,17 +12,17 @@ PROCEDURE CenterMainWindow()
   win_Main.Row  := ( GetDesktopRealHeight() / 2 ) - ( APP_HEIGHT / 2 )
   win_Main.Col  := ( GetDesktopRealWidth()  / 2 ) - ( APP_WIDTH  / 2 )
 
-  do_events()
+  Do_Events()
 
   APP_ROW    := win_Main.Row
   APP_COL    := win_Main.Col
 
-  do_events()
+  Do_Events()
 
   aFrm[ 1 , 2 ] := APP_ROW
   aFrm[ 1 , 3 ] := APP_COL
 
-  do_events()  
+  Do_Events()  
 
 *-----------------------------------------------------------------------------*
 RETURN

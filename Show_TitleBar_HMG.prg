@@ -9,11 +9,11 @@ PROCEDURE Show_TitleBar()
 
   LOCAL hDC
   LOCAL BTstruct
-  
+
   LOCAL nTypeText
   LOCAL nAlingText
   LOCAL nOrientation
-  
+
   LOCAL hBMP
 
   hDC = BT_CreateDC( "win_Main" , BT_HDC_INVALIDCLIENTAREA , @BTstruct )
@@ -21,7 +21,6 @@ PROCEDURE Show_TitleBar()
   nTypeText    := BT_TEXT_TRANSPARENT
   nAlingText   := BT_TEXT_LEFT + BT_TEXT_TOP
   nOrientation := 0
-
 
   BT_DrawText ( hDC , 2 * APP_ADJUST_Y , 45 * APP_ADJUST_X , NAZWA_PR , fARIAL , ( 20 + 1 ) * APP_ADJUST_Y , WHITE , BLUE , nTypeText , nAlingText , nOrientation )
 

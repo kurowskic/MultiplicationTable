@@ -104,8 +104,8 @@ PROCEDURE MakeMultiplicationTable( xnMulti )
 
       cLabel := "Label_Y_" + nMultiplicationY
 
-      IF !IsControlDefined( &cLabel , win_Main )
 
+      IF !IsControlDefined( &cLabel , win_Main )
 
         DEFINE LABEL &(cLabel)
         PARENT    win_Main
@@ -197,7 +197,7 @@ PROCEDURE MakeMultiplicationTable( xnMulti )
         END LABEL
 
 
-Do_Events()
+        Do_Events()
 
       ENDIF
 
