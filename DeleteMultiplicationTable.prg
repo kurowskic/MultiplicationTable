@@ -13,20 +13,20 @@ PROCEDURE DeleteMultiplicationTable( xnMulti )
   LOCAL maxY := 10
 
   LOCAL nPosition
-  
+
   LOCAL nPosX
   LOCAL nPosY
 
   LOCAL nMultiplicationX
   LOCAL nMultiplicationY
   LOCAL cMultiplicationValue
-  
+
   LOCAL cLabel
 
   DEFAULT xnMulti := 1
 
   IF xnMulti == 2
-  
+
     nBlockSize := nBlockSize / 2
     nBreak :=  nBreak / 2
 

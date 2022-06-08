@@ -43,32 +43,32 @@ PROCEDURE CTK_DrawBorder( xcForm )
 
 
   // TOP
-        DRAW LINE IN WINDOW &xcForm                      ; 
+        DRAW LINE IN WINDOW &xcForm                      ;
             AT nBordrRow           , nBordrCol           ;
             TO nBordrRow           , nBordrCol+nBordrWid ;
             PENCOLOR Color                               ;
-            PENWIDTH nPenWidth                          
+            PENWIDTH nPenWidth
 
         // LEFT
         DRAW LINE IN WINDOW &xcForm                      ;
             AT nBordrRow           , nBordrCol           ;
             TO nBordrRow+nBordrHig , nBordrCol           ;
             PENCOLOR Color                               ;
-            PENWIDTH nPenWidth                          
+            PENWIDTH nPenWidth
 
         // BOTTOM
         DRAW LINE IN WINDOW &xcForm                      ;
             AT nBordrRow+nBordrHig , nBordrCol           ;
             TO nBordrRow+nBordrHig , nBordrCol+nBordrWid ;
             PENCOLOR Color                               ;
-            PENWIDTH nPenWidth                          
+            PENWIDTH nPenWidth
 
        // RIGHT
         DRAW LINE IN WINDOW &xcForm                      ;
             AT nBordrRow           , nBordrCol+nBordrWid ;
             TO nBordrRow+nBordrHig , nBordrCol+nBordrWid ;
             PENCOLOR Color                               ;
-            PENWIDTH nPenWidth                          
+            PENWIDTH nPenWidth
 
 
   Do_Events()
@@ -152,7 +152,7 @@ FUNCTION CTK_Restore( xaFrm )
   LOCAL nI
   LOCAL nFrm
 
-  nFrm := LEN( xaFrm ) 
+  nFrm := LEN( xaFrm )
 
 
   IF nFrm > 1

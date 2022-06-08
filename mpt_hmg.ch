@@ -2,31 +2,31 @@
 #include "mpt_ver.ch"
 *-----------------------------------------------------------------------------*
 
-#DEFINE  _PRG1_      '2022'
-#DEFINE  _PRG2_      '158'
-#DEFINE  _PRG3_      '1'
+#DEFINE	 _PRG1_		 '2022'
+#DEFINE	 _PRG2_		 '159'
+#DEFINE	 _PRG3_		 '1'
 
-#DEFINE  _DB1_       ''
-#DEFINE  _DB2_       ''
-#DEFINE  _DB3_       ''
-
-
-#DEFINE  _OLD_PRG1_  '2022'
-#DEFINE  _OLD_PRG2_  '000'
-#DEFINE  _OLD_PRG3_  '0'
-
-#DEFINE  _OLD_DB1_   ''
-#DEFINE  _OLD_DB2_   ''
-#DEFINE  _OLD_DB3_   ''
+#DEFINE	 _DB1_		 ''
+#DEFINE	 _DB2_		 ''
+#DEFINE	 _DB3_		 ''
 
 
-#DEFINE NAZWA_PR     "Multiplication Table"
+#DEFINE	 _OLD_PRG1_	 '2022'
+#DEFINE	 _OLD_PRG2_	 '158'
+#DEFINE	 _OLD_PRG3_	 '1'
 
-#DEFINE WERSJA_PR    _PRG1_+"."+_PRG2_+"."+_PRG3_
-#DEFINE WERSJA_DB    _DB1_+"."+_DB2_+"."+_DB3_
+#DEFINE	 _OLD_DB1_	 ''
+#DEFINE	 _OLD_DB2_	 ''
+#DEFINE	 _OLD_DB3_	 ''
 
 
-#DEFINE MsgNoYes(c)  MsgYesNo( c , NAZWA_PR , .t. , 0 ,  .F. , .F. )
+#DEFINE NAZWA_PR	 "Multiplication Table"
+
+#DEFINE WERSJA_PR	 _PRG1_+"."+_PRG2_+"."+_PRG3_
+#DEFINE WERSJA_DB	 _DB1_+"."+_DB2_+"."+_DB3_
+
+
+#DEFINE MsgNoYes(c)	 MsgYesNo( c , NAZWA_PR , .t. , 0 ,	 .F. , .F. )
 
 
 #INCLUDE "Dbstruct.ch"
@@ -38,7 +38,7 @@
 #IFDEF __SQLITE__
 
   #IFDEF  _HMG_2_
-    #INCLUDE "hbsqlit3.ch"
+	#INCLUDE "hbsqlit3.ch"
   #ENDIF
 
 #ENDIF
@@ -46,10 +46,10 @@
 
 #IFDEF _HMG_2_
 
-  #INCLUDE  "minigui.ch"
+  #INCLUDE	"minigui.ch"
 
-  #INCLUDE  "miniprint.ch"
-  #INCLUDE  "i_winuser.ch"
+  #INCLUDE	"miniprint.ch"
+  #INCLUDE	"i_winuser.ch"
 
   #include "i_UsrInit.ch"
   #include "i_UsrSOOP.ch"
@@ -61,7 +61,7 @@
 
 #IFDEF _HMG_3_
 
-  #INCLUDE  "hmg.ch"
+  #INCLUDE	"hmg.ch"
 
 #ENDIF
 
@@ -69,7 +69,7 @@
 #IFDEF _HMG_2_
 
   #DEFINE  FALSE .F.
-  #DEFINE  TRUE  .T.
+  #DEFINE  TRUE	 .T.
 
 #ENDIF
 
@@ -81,8 +81,8 @@
 
 #IFDEF _HMG_2_
 
-  #define HTCAPTION             2
-  #define WM_NCLBUTTONDOWN    161
+  #define HTCAPTION				2
+  #define WM_NCLBUTTONDOWN	  161
 
   #define EM_SETCUEBANNER  0x1501
 
@@ -92,11 +92,11 @@
 
 #ifndef __XHARBOUR__
 
-   #xcommand TRY                => bError := errorBlock( {|oError| break( oError ) } ) ;;
-                                   BEGIN SEQUENCE
+   #xcommand TRY				=> bError := errorBlock( {|oError| break( oError ) } ) ;;
+								   BEGIN SEQUENCE
    #xcommand CATCH [<!oError!>] => errorBlock( bError ) ;;
-                                   RECOVER [USING <oError>] <-oError-> ;;
-                                   errorBlock( bError )
+								   RECOVER [USING <oError>] <-oError-> ;;
+								   errorBlock( bError )
 #endif
 
 
