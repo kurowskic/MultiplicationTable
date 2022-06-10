@@ -13,20 +13,22 @@ PROCEDURE MakeMultiplicationTable( xnMulti )
   LOCAL maxY := 10
 
   LOCAL nPosition
-  
+
   LOCAL nPosX
   LOCAL nPosY
 
   LOCAL nMultiplicationX
   LOCAL nMultiplicationY
   LOCAL cMultiplicationValue
-  
+
   LOCAL cLabel
 
   DEFAULT xnMulti := 1
 
+  DECLARE WINDOW win_Main
+
   IF xnMulti == 2
-  
+
     nBlockSize := nBlockSize / xnMulti
     nBreak :=  nBreak / xnMulti
 
@@ -80,8 +82,11 @@ PROCEDURE MakeMultiplicationTable( xnMulti )
 #IFDEF _HMG_2_
         VCENTERALIGN .T.
 #ENDIF
-        BORDER .T. 
+        BORDER .T.
         END LABEL
+
+        SetProperty( "win_Main" , cLabel , "backcolor", YELLOW )
+        Do_Events()
 
       ENDIF
 
@@ -126,14 +131,18 @@ PROCEDURE MakeMultiplicationTable( xnMulti )
         TRANSPARENT .F.
         ACTION Nil
         AUTOSIZE .F.
-        BACKCOLOR RED
+        BACKCOLOR BLUE
         FONTCOLOR NIL
         CENTERALIGN .T.
 #IFDEF _HMG_2_
         VCENTERALIGN .T.
 #ENDIF
-        BORDER .T. 
+        BORDER .T.
         END LABEL
+
+
+        SetProperty( "win_Main" , cLabel , "backcolor", BLUE )
+        Do_Events()
 
       ENDIF
 
@@ -193,11 +202,13 @@ PROCEDURE MakeMultiplicationTable( xnMulti )
 #IFDEF _HMG_2_
         VCENTERALIGN .T.
 #ENDIF
-        BORDER .T. 
+        BORDER .T.
         END LABEL
 
 
+        SetProperty( "win_Main" , cLabel , "backcolor", GREEN )
         Do_Events()
+
 
       ENDIF
 
