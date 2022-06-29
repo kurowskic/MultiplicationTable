@@ -19,7 +19,7 @@ PROCEDURE About_OnGotFocus()
   AutoAdjustControls( "win_About" )
 
   CTK_DrawBorder( "win_About" )
- 
+
 RETURN
 *-----------------------------------------------------------------------------*
 

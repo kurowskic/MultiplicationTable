@@ -22,7 +22,7 @@ PROCEDURE CenterMainWindow()
   aFrm[ 1 , 2 ] := APP_ROW
   aFrm[ 1 , 3 ] := APP_COL
 
-  Do_Events()  
+  Do_Events()
 
 *-----------------------------------------------------------------------------*
 RETURN

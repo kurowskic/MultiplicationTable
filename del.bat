@@ -10,3 +10,5 @@ del errorlog.htm
 del mpt_ver.ch
 del mpt_hmg.exe
 del mpt.exe
+del temp.txt
+del *.bak

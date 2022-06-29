@@ -6,7 +6,8 @@ PROCEDURE win_main_OnInit()
 
   AutoAdjustControls( "win_Main" )
 
-  MakeMultiplicationTable()
+  MakeNavigation( 1 )
+  MakeMultiplicationTable( 1 )
 
   CenterMainWindow()
 

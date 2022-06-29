@@ -21,10 +21,6 @@ PROCEDURE Main()
   MEMVAR fTAHOMA
   MEMVAR fCALIBRI
 
-  MEMVAR aDataBase
-
-  MEMVAR nPage
-
   PUBLIC APP_ROW
   PUBLIC APP_COL
   PUBLIC APP_HEIGHT
@@ -38,9 +34,6 @@ PROCEDURE Main()
   PUBLIC fTIMES
   PUBLIC fTAHOMA
   PUBLIC fCALIBRI
-
-  PUBLIC aDataBase
-  PUBLIC nPage
 
 
 #IFDEF _HMG_3_
@@ -92,16 +85,13 @@ PROCEDURE Main()
 
   ERRORLEVEL( 0 )
 
-  aDataBase := {}
-  nPage := 1
-
 
 #IFDEF _HMG_3_
 
   APP_ROW    :=    0
   APP_COL    :=    0
-  APP_HEIGHT := 1536
-  APP_WIDTH  :=  824
+  APP_HEIGHT :=  824
+  APP_WIDTH  := 1536
 
 #ENDIF
 

@@ -17,9 +17,8 @@ RETURN
 PROCEDURE CTK_DrawBorder( xcForm )
 *-----------------------------------------------------------------------------*
 
-
-  LOCAL nControlRow := 0 ,; // GetProperty( xcForm, "Row" ),;
-        nControlCol := 0 ,; // GetProperty( xcForm, "Col" ),;
+  LOCAL nControlRow := 0 ,;
+        nControlCol := 0 ,;
         nControlWid := GetProperty( xcForm, "Width" ),;
         nControlHig := GetProperty( xcForm, "Height" )
 
@@ -43,33 +42,32 @@ PROCEDURE CTK_DrawBorder( xcForm )
 
 
   // TOP
-        DRAW LINE IN WINDOW &xcForm                      ;
-            AT nBordrRow           , nBordrCol           ;
-            TO nBordrRow           , nBordrCol+nBordrWid ;
-            PENCOLOR Color                               ;
-            PENWIDTH nPenWidth
+  DRAW LINE IN WINDOW &xcForm                    ;
+    AT nBordrRow           , nBordrCol           ;
+    TO nBordrRow           , nBordrCol+nBordrWid ;
+    PENCOLOR Color                               ;
+    PENWIDTH nPenWidth
 
-        // LEFT
-        DRAW LINE IN WINDOW &xcForm                      ;
-            AT nBordrRow           , nBordrCol           ;
-            TO nBordrRow+nBordrHig , nBordrCol           ;
-            PENCOLOR Color                               ;
-            PENWIDTH nPenWidth
+  // LEFT
+  DRAW LINE IN WINDOW &xcForm                    ;
+    AT nBordrRow           , nBordrCol           ;
+    TO nBordrRow+nBordrHig , nBordrCol           ;
+    PENCOLOR Color                               ;
+    PENWIDTH nPenWidth
 
-        // BOTTOM
-        DRAW LINE IN WINDOW &xcForm                      ;
-            AT nBordrRow+nBordrHig , nBordrCol           ;
-            TO nBordrRow+nBordrHig , nBordrCol+nBordrWid ;
-            PENCOLOR Color                               ;
-            PENWIDTH nPenWidth
+  // BOTTOM
+  DRAW LINE IN WINDOW &xcForm                    ;
+    AT nBordrRow+nBordrHig , nBordrCol           ;
+    TO nBordrRow+nBordrHig , nBordrCol+nBordrWid ;
+    PENCOLOR Color                               ;
+    PENWIDTH nPenWidth
 
-       // RIGHT
-        DRAW LINE IN WINDOW &xcForm                      ;
-            AT nBordrRow           , nBordrCol+nBordrWid ;
-            TO nBordrRow+nBordrHig , nBordrCol+nBordrWid ;
-            PENCOLOR Color                               ;
-            PENWIDTH nPenWidth
-
+  // RIGHT
+  DRAW LINE IN WINDOW &xcForm                    ;
+    AT nBordrRow           , nBordrCol+nBordrWid ;
+    TO nBordrRow+nBordrHig , nBordrCol+nBordrWid ;
+    PENCOLOR Color                               ;
+    PENWIDTH nPenWidth
 
   Do_Events()
 
