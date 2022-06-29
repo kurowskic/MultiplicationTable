@@ -10,7 +10,7 @@ PROCEDURE MakeNavigation()
   LOCAL nX
   LOCAL nY
 
-  LOCAL nBreak := 500 // 5
+  LOCAL nBreak := 500
 
   LOCAL maxX := 2
   LOCAL maxY := 1

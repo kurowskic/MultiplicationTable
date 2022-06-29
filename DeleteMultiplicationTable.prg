@@ -40,7 +40,7 @@ PROCEDURE DeleteMultiplicationTable( xnMulti )
 
   nPosition := ( 1536 / 2 ) - ( ( maxX * nBlockSize ) / 2 ) - ( ( nBlockSize - 10 ) / 2 )
 
-  // X -> 1..10
+  // X -> 1..10 , 1..20
   nPosY :=  1
   FOR nPosX := 1 TO maxX
 
@@ -65,7 +65,7 @@ PROCEDURE DeleteMultiplicationTable( xnMulti )
   NEXT nPosX
 
 
-  // Y -> 1..10
+  // Y -> 1..10 , 1..20
   nPosX :=  1
   FOR nPosY := 1 TO maxY
 
