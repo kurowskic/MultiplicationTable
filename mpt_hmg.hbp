@@ -1,6 +1,7 @@
 mpt_hmg.prg
 MakeMultiplicationTable.prg
 DeleteMultiplicationTable.prg
+MakeNavigation.prg
 About.prg
 AutoAdjustControls.prg
 ctklib.prg

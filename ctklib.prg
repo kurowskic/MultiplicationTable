@@ -18,8 +18,8 @@ PROCEDURE CTK_DrawBorder( xcForm )
 *-----------------------------------------------------------------------------*
 
 
-  LOCAL nControlRow := 0 ,; // GetProperty( xcForm, "Row" ),;
-        nControlCol := 0 ,; // GetProperty( xcForm, "Col" ),;
+  LOCAL nControlRow := 0 ,;
+        nControlCol := 0 ,;
         nControlWid := GetProperty( xcForm, "Width" ),;
         nControlHig := GetProperty( xcForm, "Height" )
 

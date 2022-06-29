@@ -6,6 +6,7 @@
 *-----------------------------------------------------------------------------*
 PROCEDURE DeleteMultiplicationTable( xnMulti )
 *-----------------------------------------------------------------------------*
+
   LOCAL nBlockSize := 60
   LOCAL nBreak := 4
 
@@ -25,6 +26,7 @@ PROCEDURE DeleteMultiplicationTable( xnMulti )
 
   DEFAULT xnMulti := 1
 
+
   IF xnMulti == 2
 
     nBlockSize := nBlockSize / 2
@@ -34,6 +36,7 @@ PROCEDURE DeleteMultiplicationTable( xnMulti )
     maxY := maxY * 2
 
   ENDIF
+
 
   nPosition := ( 1536 / 2 ) - ( ( maxX * nBlockSize ) / 2 ) - ( ( nBlockSize - 10 ) / 2 )
 

@@ -14,6 +14,7 @@ call %MG_ROOT%\batch\compile.bat mpt_hmg /ro
 call %MG_ROOT%\batch\compile.bat mpt_hmg               /nl %1 %2 %3 %4 %5 %6 %7 %8 %9
 call %MG_ROOT%\batch\compile.bat ctklib                /nl %1 %2 %3 %4 %5 %6 %7 %8 %9
 call %MG_ROOT%\batch\compile.bat MakeMultiplicationTable /nl %1 %2 %3 %4 %5 %6 %7 %8 %9
+call %MG_ROOT%\batch\compile.bat MakeNavigation        /nl %1 %2 %3 %4 %5 %6 %7 %8 %9
 call %MG_ROOT%\batch\compile.bat DeleteMultiplicationTable /nl %1 %2 %3 %4 %5 %6 %7 %8 %9
 call %MG_ROOT%\batch\compile.bat About                 /nl %1 %2 %3 %4 %5 %6 %7 %8 %9
 call %MG_ROOT%\batch\compile.bat AutoAdjustControls    /nl %1 %2 %3 %4 %5 %6 %7 %8 %9
@@ -22,11 +23,12 @@ call %MG_ROOT%\batch\compile.bat MoveActiveWindow      /nl %1 %2 %3 %4 %5 %6 %7 
 call %MG_ROOT%\batch\compile.bat CenterMainWindow      /nl %1 %2 %3 %4 %5 %6 %7 %8 %9
 call %MG_ROOT%\batch\compile.bat CenterModalWindow     /nl %1 %2 %3 %4 %5 %6 %7 %8 %9
 
-call %MG_ROOT%\batch\compile.bat mpt_hmg /lo /b ctklib /b MakeMultiplicationTable /b DeleteMultiplicationTable /b About /b AutoAdjustControls /b EndTheProgram /b MoveActiveWindow /b CenterMainWindow /b CenterModalWindow /r mpt_hmg /nx %1 %2 %3 %4 %5 %6 %7 %8 %9
+call %MG_ROOT%\batch\compile.bat mpt_hmg /lo /b ctklib /b MakeMultiplicationTable /b MakeNavigation /b DeleteMultiplicationTable /b About /b AutoAdjustControls /b EndTheProgram /b MoveActiveWindow /b CenterMainWindow /b CenterModalWindow /r mpt_hmg /nx %1 %2 %3 %4 %5 %6 %7 %8 %9
 
 call %MG_ROOT%\batch\compile.bat mpt_hmg               /do %1 %2 %3 %4 %5 %6 %7 %8 %9
 call %MG_ROOT%\batch\compile.bat ctklib                /do %1 %2 %3 %4 %5 %6 %7 %8 %9
 call %MG_ROOT%\batch\compile.bat MakeMultiplicationTable /do %1 %2 %3 %4 %5 %6 %7 %8 %9
+call %MG_ROOT%\batch\compile.bat MakeNavigation        /do %1 %2 %3 %4 %5 %6 %7 %8 %9
 call %MG_ROOT%\batch\compile.bat DeleteMultiplicationTable /do %1 %2 %3 %4 %5 %6 %7 %8 %9
 call %MG_ROOT%\batch\compile.bat About                 /do %1 %2 %3 %4 %5 %6 %7 %8 %9
 call %MG_ROOT%\batch\compile.bat AutoAdjustControls    /do %1 %2 %3 %4 %5 %6 %7 %8 %9

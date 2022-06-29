@@ -13,20 +13,22 @@ PROCEDURE MakeMultiplicationTable( xnMulti )
   LOCAL maxY := 10
 
   LOCAL nPosition
-  
+
   LOCAL nPosX
   LOCAL nPosY
 
   LOCAL nMultiplicationX
   LOCAL nMultiplicationY
   LOCAL cMultiplicationValue
-  
+
   LOCAL cLabel
 
   DEFAULT xnMulti := 1
 
+  DECLARE WINDOW win_Main
+
   IF xnMulti == 2
-  
+
     nBlockSize := nBlockSize / xnMulti
     nBreak :=  nBreak / xnMulti
 
@@ -62,8 +64,8 @@ PROCEDURE MakeMultiplicationTable( xnMulti )
         WIDTH     ((  nBlockSize - nBreak ) * xnMulti ) * APP_ADJUST_X
         HEIGHT    ( nBlockSize - nBreak ) * APP_ADJUST_Y
         VALUE nMultiplicationX
-        FONTNAME fTIMES
-        FONTSIZE 16
+        FONTNAME fARIAL
+        FONTSIZE 16* APP_ADJUST_X
         TOOLTIP ""
         FONTBOLD .T.
         FONTITALIC .F.
@@ -80,8 +82,11 @@ PROCEDURE MakeMultiplicationTable( xnMulti )
 #IFDEF _HMG_2_
         VCENTERALIGN .T.
 #ENDIF
-        BORDER .T. 
+        BORDER .T.
         END LABEL
+
+        SetProperty( "win_Main" , cLabel , "backcolor", YELLOW )
+        Do_Events()
 
       ENDIF
 
@@ -114,8 +119,8 @@ PROCEDURE MakeMultiplicationTable( xnMulti )
         WIDTH     ((  nBlockSize - nBreak ) * xnMulti ) * APP_ADJUST_X
         HEIGHT    ( nBlockSize - nBreak ) * APP_ADJUST_Y
         VALUE nMultiplicationY
-        FONTNAME fTIMES
-        FONTSIZE 16
+        FONTNAME fARIAL
+        FONTSIZE 16* APP_ADJUST_X
         TOOLTIP ""
         FONTBOLD .T.
         FONTITALIC .F.
@@ -126,14 +131,18 @@ PROCEDURE MakeMultiplicationTable( xnMulti )
         TRANSPARENT .F.
         ACTION Nil
         AUTOSIZE .F.
-        BACKCOLOR RED
+        BACKCOLOR BLUE
         FONTCOLOR NIL
         CENTERALIGN .T.
 #IFDEF _HMG_2_
         VCENTERALIGN .T.
 #ENDIF
-        BORDER .T. 
+        BORDER .T.
         END LABEL
+
+
+        SetProperty( "win_Main" , cLabel , "backcolor", BLUE )
+        Do_Events()
 
       ENDIF
 
@@ -173,10 +182,11 @@ PROCEDURE MakeMultiplicationTable( xnMulti )
         PARENT    win_Main
         ROW       ( ( nPosY * nBlockSize - nBlockSize ) + 180 ) * APP_ADJUST_Y
         COL       ( ( ( nPosX * nBlockSize ) * xnMulti ) + nPosition ) * APP_ADJUST_X
-        WIDTH     ((  nBlockSize - nBreak ) * xnMulti ) * APP_ADJUST_X
+        WIDTH     ( ( nBlockSize - nBreak ) * xnMulti ) * APP_ADJUST_X
         HEIGHT    ( nBlockSize - nBreak ) * APP_ADJUST_Y
         VALUE cMultiplicationValue
-        FONTSIZE 16
+        FONTNAME fARIAL
+        FONTSIZE 16* APP_ADJUST_X
         TOOLTIP ""
         FONTBOLD .T.
         FONTITALIC .F.
@@ -193,11 +203,13 @@ PROCEDURE MakeMultiplicationTable( xnMulti )
 #IFDEF _HMG_2_
         VCENTERALIGN .T.
 #ENDIF
-        BORDER .T. 
+        BORDER .T.
         END LABEL
 
 
+        SetProperty( "win_Main" , cLabel , "backcolor", GREEN )
         Do_Events()
+
 
       ENDIF
 
