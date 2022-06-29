@@ -14,9 +14,9 @@ RETURN
 PROCEDURE About_OnGotFocus()
 *-----------------------------------------------------------------------------*
 
-  CenterModalWindow( "win_About" )
+  SetCenterModalWindow( aFormProperty )
 
-  AutoAdjustControls( "win_About" )
+  SetAdjustControls( aFrmControls )
 
   CTK_DrawBorder( "win_About" )
 

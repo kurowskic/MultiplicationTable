@@ -4,12 +4,12 @@ PROCEDURE win_main_OnInit()
 
   win_Main.Hide
 
-  AutoAdjustControls( "win_Main" )
+  SetAdjustControls( aFrmControls )
 
   MakeNavigation( 1 )
   MakeMultiplicationTable( 1 )
 
-  CenterMainWindow()
+  SetCenterMainWindow()
 
   CTK_DrawBorder( "win_Main" )
 

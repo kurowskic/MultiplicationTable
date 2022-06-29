@@ -12,9 +12,9 @@ DEFINE WINDOW TEMPLATE ;
   NOSYSMENU ;
   ON INIT win_Main_OnInit() ;
   BACKCOLOR { 000 , 085 , 229 } ;
-  ON MOUSECLICK MoveActiveWindow( , this.Name ) ;
-  ON RESTORE MoveActiveWindow( , this.Name ) ;
-  ON GOTFOCUS MoveActiveWindow( , this.Name )
+  ON MOUSECLICK MoveActiveWindow( this.Name ) ;
+  ON RESTORE MoveActiveWindow( this.Name ) ;
+  ON GOTFOCUS MoveActiveWindow( this.Name )
 
   DEFINE LABEL lbl_BackGround
     ROW    2
@@ -47,7 +47,7 @@ DEFINE WINDOW TEMPLATE ;
     BACKCOLOR { 000 , 085 , 229 }
     FONTCOLOR { 255 , 255 , 255 }
     VCENTERALIGN .T.
-    ACTION MoveActiveWindow( , "win_Main" )
+    ACTION MoveActiveWindow( "win_Main" )
   END LABEL
 
   DEFINE BUTTON btn_About

@@ -42,11 +42,11 @@ PROCEDURE About()
 
     IF "MiniGUI" $ MiniGUIVersion()
 
-      SetProperty( "win_About" , "lbl_3"    , "Value"   , "http://hmgextended.com" )
+      SetProperty( "win_About" , "lbl_3"  , "Value"   , "http://hmgextended.com"   )
 
     ELSE
 
-      SetProperty( "win_About" , "lbl_3"    , "Value"   , "http://www.hmgforum.com/" )
+      SetProperty( "win_About" , "lbl_3"  , "Value"   , "http://www.hmgforum.com/" )
 
     ENDIF
 
@@ -62,7 +62,7 @@ PROCEDURE About()
 
     ELSE
 
-      SetProperty( "win_About" , "lbl_7"    , "Value"   , "https://sourceforge.net/projects/mingw-w64/"        )
+      SetProperty( "win_About" , "lbl_7"    , "Value"   , "https://sourceforge.net/projects/mingw-w64/" )
 
     ENDIF
 
