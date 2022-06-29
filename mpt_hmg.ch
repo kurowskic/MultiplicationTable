@@ -3,8 +3,8 @@
 *-----------------------------------------------------------------------------*
 
 #DEFINE  _PRG1_      '2022'
-#DEFINE  _PRG2_      '159'
-#DEFINE  _PRG3_      '2'
+#DEFINE  _PRG2_      '180'
+#DEFINE  _PRG3_      '1'
 
 #DEFINE  _DB1_       ''
 #DEFINE  _DB2_       ''
@@ -26,52 +26,11 @@
 #DEFINE WERSJA_DB    _DB1_+"."+_DB2_+"."+_DB3_
 
 
-#DEFINE MsgNoYes(c)  MsgYesNo( c , NAZWA_PR , .t. , 0 ,  .F. , .F. )
+#INCLUDE "hmg.ch"
 
 
-#INCLUDE "Dbstruct.ch"
-#INCLUDE "common.ch"
-#INCLUDE "fileio.ch"
-#INCLUDE "Directry.ch"
-
-
-#IFDEF __SQLITE__
-
-  #IFDEF  _HMG_2_
-    #INCLUDE "hbsqlit3.ch"
-  #ENDIF
-
-#ENDIF
-
-
-#IFDEF _HMG_2_
-
-  #INCLUDE  "minigui.ch"
-
-  #INCLUDE  "miniprint.ch"
-  #INCLUDE  "i_winuser.ch"
-
-  #include "i_UsrInit.ch"
-  #include "i_UsrSOOP.ch"
-
-  #include "hbinkey.ch"
-
-#ENDIF
-
-
-#IFDEF _HMG_3_
-
-  #INCLUDE  "hmg.ch"
-
-#ENDIF
-
-
-#IFDEF _HMG_2_
-
-  #DEFINE  FALSE .F.
-  #DEFINE  TRUE  .T.
-
-#ENDIF
+#DEFINE  FALSE .F.
+#DEFINE  TRUE  .T.
 
 
 #define CRLF CHR( 13 ) + CHR( 10 )

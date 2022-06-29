@@ -8,8 +8,8 @@ APP_INFO_20         BITMAP resource\app_info_20.bmp
 APP_EXIT_20         BITMAP resource\app_exit_20.bmp
 
 1 VERSIONINFO
-FILEVERSION 2022,159,2,0
-PRODUCTVERSION 2022,159,2,0
+FILEVERSION 2022,180,1,0
+PRODUCTVERSION 2022,180,1,0
 FILEOS 0x4
 FILETYPE 0x1
 {
@@ -18,14 +18,14 @@ BLOCK "StringFileInfo"
   BLOCK "041504b0"
   {
    VALUE "FileDescription" , "Multiplication Table\000"
-   VALUE "FileVersion"     , "2022.159.2\000"
+   VALUE "FileVersion"     , "2022.180.1\000"
    VALUE "InternalName"    , "Multiplication Table\000"
    VALUE "LegalCopyright"  , "LC\000"
    VALUE "LegalTrademarks" , "LT\000"
    VALUE "OriginalFilename", "mpt_hmg.exe\000"
    VALUE "CompanyName"     , "CN\000"
    VALUE "ProductName"     , "Multiplication Table\000"
-   VALUE "ProductVersion"  , "2022.159.2\000"
+   VALUE "ProductVersion"  , "2022.180.1\000"
    VALUE "Comments"        , "Comments\000"
   }
 }

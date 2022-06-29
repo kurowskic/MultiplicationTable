@@ -39,7 +39,7 @@ PROCEDURE MakeMultiplicationTable( xnMulti )
 
   nPosition := ( 1536 / 2 ) - ( ( maxX * nBlockSize * xnMulti ) / 2 ) - ( ( nBlockSize - maxX ) / 2 )
 
-  // X -> 1..10
+  // X -> 1..10 , 1..20
   nPosY :=  1
   FOR nPosX := 1 TO maxX
 
@@ -64,8 +64,8 @@ PROCEDURE MakeMultiplicationTable( xnMulti )
         WIDTH     ((  nBlockSize - nBreak ) * xnMulti ) * APP_ADJUST_X
         HEIGHT    ( nBlockSize - nBreak ) * APP_ADJUST_Y
         VALUE nMultiplicationX
-        FONTNAME fTIMES
-        FONTSIZE 16
+        FONTNAME fARIAL
+        FONTSIZE 16* APP_ADJUST_X
         TOOLTIP ""
         FONTBOLD .T.
         FONTITALIC .F.
@@ -93,7 +93,7 @@ PROCEDURE MakeMultiplicationTable( xnMulti )
   NEXT nPosX
 
 
-  // Y -> 1..10
+  // Y -> 1..10 , 1..20
   nPosX :=  1
   FOR nPosY := 1 TO maxY
 
@@ -119,8 +119,8 @@ PROCEDURE MakeMultiplicationTable( xnMulti )
         WIDTH     ((  nBlockSize - nBreak ) * xnMulti ) * APP_ADJUST_X
         HEIGHT    ( nBlockSize - nBreak ) * APP_ADJUST_Y
         VALUE nMultiplicationY
-        FONTNAME fTIMES
-        FONTSIZE 16
+        FONTNAME fARIAL
+        FONTSIZE 16* APP_ADJUST_X
         TOOLTIP ""
         FONTBOLD .T.
         FONTITALIC .F.
@@ -182,10 +182,11 @@ PROCEDURE MakeMultiplicationTable( xnMulti )
         PARENT    win_Main
         ROW       ( ( nPosY * nBlockSize - nBlockSize ) + 180 ) * APP_ADJUST_Y
         COL       ( ( ( nPosX * nBlockSize ) * xnMulti ) + nPosition ) * APP_ADJUST_X
-        WIDTH     ((  nBlockSize - nBreak ) * xnMulti ) * APP_ADJUST_X
+        WIDTH     ( ( nBlockSize - nBreak ) * xnMulti ) * APP_ADJUST_X
         HEIGHT    ( nBlockSize - nBreak ) * APP_ADJUST_Y
         VALUE cMultiplicationValue
-        FONTSIZE 16
+        FONTNAME fARIAL
+        FONTSIZE 16* APP_ADJUST_X
         TOOLTIP ""
         FONTBOLD .T.
         FONTITALIC .F.
