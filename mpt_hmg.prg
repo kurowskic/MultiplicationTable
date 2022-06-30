@@ -209,26 +209,6 @@ PROCEDURE Main()
 #ENDIF
 
 
-/*
-    APP_ROW    := GetProperty( "win_Main" , "Row" )
-    APP_COL    := GetProperty( "win_Main" , "Col" )
-    APP_HEIGHT := win_Main.Height
-    APP_WIDTH  := win_Main.Width
-
-    AADD( aFrm , { "win_Main" , win_Main.Row , win_Main.Col } )
-
-    ON KEY ALT+F4 OF win_Main ACTION { || EndTheProgram() }
-    ON KEY F2     OF win_Main ACTION { || SetCenterMainWindow() }
-
-    SetProperty( "win_Main" , "btn_ExitPR" , "Action" , { || win_main_btn_ExitPr() } )
-    SetProperty( "win_Main" , "btn_MinPR"  , "Action" , { || win_main_btn_MinPr()  } )
-
-    win_Main.btn_About.Picture       := 'APP_INFO_20'
-    win_Main.btn_MinPR.Picture       := 'APP_MINI_20'
-    win_Main.btn_ExitPR.Picture      := 'APP_EXIT_20'
-*/
-
-
     DO CASE
 
       CASE INT( GetDesktopRealHeight() ) == INT( GetProperty( "win_Main" , "Height" ) ) ;
@@ -332,9 +312,9 @@ PROCEDURE Main()
     win_Main.btn_ExitPR.Picture      := 'APP_EXIT_20'
 
 
-    SetProperty( "win_Main" , "btn_About"  , "Col" , APP_WIDTH - INT( 105 * APP_ADJUST_X ) - 17 )
-    SetProperty( "win_Main" , "btn_MinPR"  , "Col" , APP_WIDTH - INT(  70 * APP_ADJUST_X ) - 17 )
-    SetProperty( "win_Main" , "btn_ExitPR" , "Col" , APP_WIDTH - INT(  35 * APP_ADJUST_X ) - 17 )
+    SetProperty( "win_Main" , "btn_About"  , "Col" , APP_WIDTH - INT( 105 * APP_ADJUST_X ) - 16 )
+    SetProperty( "win_Main" , "btn_MinPR"  , "Col" , APP_WIDTH - INT(  70 * APP_ADJUST_X ) - 08 )
+    SetProperty( "win_Main" , "btn_ExitPR" , "Col" , APP_WIDTH - INT(  35 * APP_ADJUST_X ) - 02 )
 
     Do_Events()
 

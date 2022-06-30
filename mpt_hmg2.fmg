@@ -11,44 +11,13 @@ DEFINE WINDOW TEMPLATE ;
   NOSIZE ;
   NOSYSMENU ;
   ON INIT win_Main_OnInit() ;
+  ON PAINT win_Main_OnPaint() ;
   BACKCOLOR { 000 , 085 , 229 } ;
-  ON MOUSECLICK MoveActiveWindow( this.Name ) ;
-  ON RESTORE MoveActiveWindow( this.Name ) ;
-  ON GOTFOCUS MoveActiveWindow( this.Name )
+  ON MOUSECLICK win_main_OnMouseClick() ;
+  ON GOTFOCUS win_main_OnGotFocus() ;
+  ON LOSTFOCUS win_main_OnLostFocus()
 
-  DEFINE LABEL lbl_BackGround
-    ROW    2
-    COL    0
-    WIDTH  725
-    HEIGHT 32
-    VALUE ""
-    FONTNAME fARIAL
-    FONTSIZE 10
-    BACKCOLOR { 000 , 085 , 229 }
-  END LABEL
-
-  DEFINE IMAGE img_APPTitle
-    ROW    2
-    COL    2
-    WIDTH  32
-    HEIGHT 32
-    PICTURE "APP_MAIN"
-    STRETCH .T.
-  END IMAGE
-
-  DEFINE LABEL lbl_APPTitle
-    ROW    2
-    COL    45
-    WIDTH  585
-    HEIGHT 32
-    VALUE "Multiplication Table"
-    FONTNAME fARIAL
-    FONTSIZE 20
-    BACKCOLOR { 000 , 085 , 229 }
-    FONTCOLOR { 255 , 255 , 255 }
-    VCENTERALIGN .T.
-    ACTION MoveActiveWindow( "win_Main" )
-  END LABEL
+/* See: Show_TitleBar() */
 
   DEFINE BUTTON btn_About
     ROW    2

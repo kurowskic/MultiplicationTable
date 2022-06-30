@@ -97,7 +97,7 @@ PROCEDURE win_Main_label( xnMulti )
   DECLARE WINDOW win_Main
 
   Do_Events()
-  win_Main.lbl_BackGround.Setfocus()
+  win_Main.Setfocus()
 
 
   IF nField != xnMulti

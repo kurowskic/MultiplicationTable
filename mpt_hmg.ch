@@ -47,7 +47,6 @@
 
 #ENDIF
 
-#DEFINE VIEW_RECORDS 5
 
 #ifndef __XHARBOUR__
 
