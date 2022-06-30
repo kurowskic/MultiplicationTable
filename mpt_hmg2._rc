@@ -7,7 +7,9 @@ APP_MAIN            BITMAP "resource\mpt.bmp"
 APP_INFO_20         BITMAP "resource\app_info_20.bmp"
 APP_EXIT_20         BITMAP "resource\app_exit_20.bmp"
 
-11 VERSIONINFO
+APP_BACKGROUND      JPG "resource\table.jpg"
+
+1 VERSIONINFO
 FILEVERSION 2022,180,1,0
 PRODUCTVERSION 2022,180,1,0
 FILEOS 0x4

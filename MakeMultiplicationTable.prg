@@ -59,7 +59,8 @@ PROCEDURE MakeMultiplicationTable( xnMulti )
 
         DEFINE LABEL &(cLabel)
         PARENT    win_Main
-        ROW       ( ( nPosY * nBlockSize - nBlockSize ) + 180 - nBlockSize - maxX ) * APP_ADJUST_Y
+;//        ROW       ( ( nPosY * nBlockSize - nBlockSize ) + 180 - nBlockSize - maxX ) * APP_ADJUST_Y
+        ROW       ( ( nPosY * nBlockSize - nBlockSize ) + 190 - nBlockSize - maxX ) * APP_ADJUST_Y
         COL       ( ( ( nPosX * nBlockSize ) * xnMulti ) + nPosition ) * APP_ADJUST_X
         WIDTH     ((  nBlockSize - nBreak ) * xnMulti ) * APP_ADJUST_X
         HEIGHT    ( nBlockSize - nBreak ) * APP_ADJUST_Y
@@ -77,7 +78,7 @@ PROCEDURE MakeMultiplicationTable( xnMulti )
         ACTION Nil
         AUTOSIZE .F.
         BACKCOLOR YELLOW
-        FONTCOLOR NIL
+        FONTCOLOR Nil
         CENTERALIGN .T.
 #IFDEF _HMG_2_
         VCENTERALIGN .T.
@@ -85,7 +86,7 @@ PROCEDURE MakeMultiplicationTable( xnMulti )
         BORDER .T.
         END LABEL
 
-        SetProperty( "win_Main" , cLabel , "backcolor", YELLOW )
+        SetProperty( "win_Main" , cLabel , "backcolor" , YELLOW )
         Do_Events()
 
       ENDIF
@@ -116,7 +117,7 @@ PROCEDURE MakeMultiplicationTable( xnMulti )
         PARENT    win_Main
         ROW       ( ( nPosY * nBlockSize - nBlockSize ) + 180 ) * APP_ADJUST_Y
         COL       ( ( ( nPosX * nBlockSize ) * xnMulti ) + nPosition - nBlockSize - ( maxY * xnMulti ) ) * APP_ADJUST_X
-        WIDTH     ((  nBlockSize - nBreak ) * xnMulti ) * APP_ADJUST_X
+        WIDTH     ( (  nBlockSize - nBreak ) * xnMulti ) * APP_ADJUST_X
         HEIGHT    ( nBlockSize - nBreak ) * APP_ADJUST_Y
         VALUE nMultiplicationY
         FONTNAME fARIAL
@@ -132,7 +133,7 @@ PROCEDURE MakeMultiplicationTable( xnMulti )
         ACTION Nil
         AUTOSIZE .F.
         BACKCOLOR BLUE
-        FONTCOLOR NIL
+        FONTCOLOR Nil
         CENTERALIGN .T.
 #IFDEF _HMG_2_
         VCENTERALIGN .T.
@@ -141,7 +142,7 @@ PROCEDURE MakeMultiplicationTable( xnMulti )
         END LABEL
 
 
-        SetProperty( "win_Main" , cLabel , "backcolor", BLUE )
+        SetProperty( "win_Main" , cLabel , "backcolor" , BLUE )
         Do_Events()
 
       ENDIF
@@ -181,6 +182,7 @@ PROCEDURE MakeMultiplicationTable( xnMulti )
         DEFINE LABEL &(cLabel)
         PARENT    win_Main
         ROW       ( ( nPosY * nBlockSize - nBlockSize ) + 180 ) * APP_ADJUST_Y
+;//        ROW       ( ( nPosY * nBlockSize - nBlockSize ) + 200 ) * APP_ADJUST_Y        
         COL       ( ( ( nPosX * nBlockSize ) * xnMulti ) + nPosition ) * APP_ADJUST_X
         WIDTH     ( ( nBlockSize - nBreak ) * xnMulti ) * APP_ADJUST_X
         HEIGHT    ( nBlockSize - nBreak ) * APP_ADJUST_Y
@@ -198,7 +200,7 @@ PROCEDURE MakeMultiplicationTable( xnMulti )
         ACTION Nil
         AUTOSIZE .F.
         BACKCOLOR GREEN
-        FONTCOLOR NIL
+        FONTCOLOR Nil
         CENTERALIGN .T.
 #IFDEF _HMG_2_
         VCENTERALIGN .T.
@@ -207,7 +209,7 @@ PROCEDURE MakeMultiplicationTable( xnMulti )
         END LABEL
 
 
-        SetProperty( "win_Main" , cLabel , "backcolor", GREEN )
+        SetProperty( "win_Main" , cLabel , "backcolor" , GREEN )
         Do_Events()
 
 

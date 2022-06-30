@@ -7,8 +7,16 @@
 PROCEDURE About()
 *-----------------------------------------------------------------------------*
 
+  LOCAL aControls
+  PRIVATE aFrmControls
+  PRIVATE aFormProperty
+  
   DECLARE WINDOW win_Main
   DECLARE WINDOW win_About
+
+  aControls := {}
+  aFrmControls := {}
+  aFormProperty := {}
 
 
   IF !IsWIndowDefined( win_About )
@@ -42,11 +50,11 @@ PROCEDURE About()
 
     IF "MiniGUI" $ MiniGUIVersion()
 
-      SetProperty( "win_About" , "lbl_3"    , "Value"   , "http://hmgextended.com" )
+      SetProperty( "win_About" , "lbl_3"  , "Value"   , "http://hmgextended.com"   )
 
     ELSE
 
-      SetProperty( "win_About" , "lbl_3"    , "Value"   , "http://www.hmgforum.com/" )
+      SetProperty( "win_About" , "lbl_3"  , "Value"   , "http://www.hmgforum.com/" )
 
     ENDIF
 
@@ -62,7 +70,7 @@ PROCEDURE About()
 
     ELSE
 
-      SetProperty( "win_About" , "lbl_7"    , "Value"   , "https://sourceforge.net/projects/mingw-w64/"        )
+      SetProperty( "win_About" , "lbl_7"    , "Value"   , "https://sourceforge.net/projects/mingw-w64/" )
 
     ENDIF
 
@@ -76,6 +84,44 @@ PROCEDURE About()
     AADD( aFrm, { "win_About" , win_About.Row , win_About.Col } )
 
     win_About.img_APPTitle.Picture  := "APP_MAIN"
+
+
+#IFDEF _HMG_2_
+
+    aControls := _GetAllControlsInForm ( "win_About" )
+
+#ENDIF
+
+
+#IFDEF _HMG_3_
+
+    aControls := _GetArrayOfAllControlsForForm ( "win_About" )
+
+#ENDIF
+
+
+    FOR nI := 1 TO LEN( aControls )
+
+      AADD( aFrmControls ,;
+      { "win_About" , aControls[ nI ] ,;
+      GetProperty( "win_About" , aControls[ nI ] , "Row" ) ,;
+      GetProperty( "win_About" , aControls[ nI ] , "Col" ) ,;
+      GetProperty( "win_About" , aControls[ nI ] , "Width" ) ,;
+      GetProperty( "win_About" , aControls[ nI ] , "Height" ) ,;
+      GetProperty( "win_About" , aControls[ nI ] , "FontSize" ) } )
+
+    NEXT nI
+
+
+    AADD( aFormProperty ,;
+    { ;
+      "win_About" ,;
+      GetProperty( "win_About" , "Row" ) ,;
+      GetProperty( "win_About" , "Col" ) ,;
+      GetProperty( "win_About" , "Width" ) ,;
+      GetProperty( "win_About" , "Height" ),;
+    } )
+
 
     win_About.Activate
 
