@@ -4,12 +4,12 @@ PROCEDURE win_main_OnInit()
 
   win_Main.Hide
 
-  AutoAdjustControls( "win_Main" )
+  SetAdjustControls( aFrmControls )
 
   MakeNavigation( 1 )
   MakeMultiplicationTable( 1 )
 
-  CenterMainWindow()
+  SetCenterMainWindow()
 
   CTK_DrawBorder( "win_Main" )
 
@@ -27,7 +27,6 @@ RETURN
 *-----------------------------------------------------------------------------*
 
 
-#IFDEF _HMG_3_
 *-----------------------------------------------------------------------------*
 PROCEDURE win_main_OnPaint()
 *-----------------------------------------------------------------------------*
@@ -37,7 +36,38 @@ PROCEDURE win_main_OnPaint()
 
 RETURN
 *-----------------------------------------------------------------------------*
-#ENDIF
+
+
+*-----------------------------------------------------------------------------*
+PROCEDURE win_main_OnMouseClick()
+*-----------------------------------------------------------------------------*
+
+  MoveActiveWindow( this.Name )
+
+RETURN
+*-----------------------------------------------------------------------------*
+
+
+
+*-----------------------------------------------------------------------------*
+PROCEDURE win_main_OnGotFocus()
+*-----------------------------------------------------------------------------*
+
+  MoveActiveWindow( this.Name )
+
+RETURN
+*-----------------------------------------------------------------------------*
+
+
+*-----------------------------------------------------------------------------*
+PROCEDURE win_main_OnLostFocus()
+*-----------------------------------------------------------------------------*
+
+  MoveActiveWindow( this.Name )
+
+
+RETURN
+*-----------------------------------------------------------------------------*
 
 
 *-----------------------------------------------------------------------------*
@@ -47,7 +77,7 @@ PROCEDURE win_Main_btn_About_Action()
   About()
 
   DO_Events()
-  win_Main.lbl_BackGround.Setfocus()
+  win_Main.Setfocus()
 
 RETURN
 *-----------------------------------------------------------------------------*
@@ -60,7 +90,7 @@ PROCEDURE win_Main_btn_ExitPR()
   EndTheProgram()
 
   Do_Events()
-  win_Main.lbl_BackGround.Setfocus()
+  win_Main.Setfocus()
 
 RETURN
 *-----------------------------------------------------------------------------*
@@ -73,7 +103,7 @@ PROCEDURE win_Main_btn_MinPR()
   aFrm := CTK_Minimize( aFrm )
 
   Do_Events()
-  win_Main.lbl_BackGround.Setfocus()
+  win_Main.Setfocus()
 
 RETURN
 *-----------------------------------------------------------------------------*

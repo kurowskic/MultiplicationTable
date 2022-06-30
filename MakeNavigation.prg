@@ -64,8 +64,8 @@ PROCEDURE MakeNavigation()
           END CASE
 
           AUTOSIZE .F.
-          BACKCOLOR NIL
-          FONTCOLOR NIL
+          BACKCOLOR Nil
+          FONTCOLOR Nil
           CENTERALIGN .T.
 #IFDEF _HMG_2_
           VCENTERALIGN .T.
@@ -82,8 +82,8 @@ PROCEDURE MakeNavigation()
 
   NEXT nY
 
-  win_Main.Label_Menu_1.backcolor:=BLUE
-  win_Main.Label_Menu_2.backcolor:=GRAY
+  win_Main.Label_Menu_1.backcolor := BLUE
+  win_Main.Label_Menu_2.backcolor := GRAY
 
 RETURN
 *-----------------------------------------------------------------------------*
@@ -97,7 +97,7 @@ PROCEDURE win_Main_label( xnMulti )
   DECLARE WINDOW win_Main
 
   Do_Events()
-  win_Main.lbl_BackGround.Setfocus()
+  win_Main.Setfocus()
 
 
   IF nField != xnMulti
@@ -109,8 +109,8 @@ PROCEDURE win_Main_label( xnMulti )
 
         DeleteMultiplicationTable( 2 )
 
-        win_Main.Label_Menu_1.backcolor:=BLUE
-        win_Main.Label_Menu_2.backcolor:=GRAY
+        win_Main.Label_Menu_1.backcolor := BLUE
+        win_Main.Label_Menu_2.backcolor := GRAY
 
         Do_Events()
         nField := 1
@@ -119,8 +119,8 @@ PROCEDURE win_Main_label( xnMulti )
 
         DeleteMultiplicationTable( 1 )
 
-        win_Main.Label_Menu_1.backcolor:=GRAY
-        win_Main.Label_Menu_2.backcolor:=BLUE
+        win_Main.Label_Menu_1.backcolor := GRAY
+        win_Main.Label_Menu_2.backcolor := BLUE
 
         Do_Events()
         nField := 2
