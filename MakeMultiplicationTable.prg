@@ -59,7 +59,6 @@ PROCEDURE MakeMultiplicationTable( xnMulti )
 
         DEFINE LABEL &(cLabel)
         PARENT    win_Main
-;//        ROW       ( ( nPosY * nBlockSize - nBlockSize ) + 180 - nBlockSize - maxX ) * APP_ADJUST_Y
         ROW       ( ( nPosY * nBlockSize - nBlockSize ) + 190 - nBlockSize - maxX ) * APP_ADJUST_Y
         COL       ( ( ( nPosX * nBlockSize ) * xnMulti ) + nPosition ) * APP_ADJUST_X
         WIDTH     ((  nBlockSize - nBreak ) * xnMulti ) * APP_ADJUST_X
@@ -181,8 +180,7 @@ PROCEDURE MakeMultiplicationTable( xnMulti )
 
         DEFINE LABEL &(cLabel)
         PARENT    win_Main
-        ROW       ( ( nPosY * nBlockSize - nBlockSize ) + 180 ) * APP_ADJUST_Y
-;//        ROW       ( ( nPosY * nBlockSize - nBlockSize ) + 200 ) * APP_ADJUST_Y        
+        ROW       ( ( nPosY * nBlockSize - nBlockSize ) + 180 ) * APP_ADJUST_Y       
         COL       ( ( ( nPosX * nBlockSize ) * xnMulti ) + nPosition ) * APP_ADJUST_X
         WIDTH     ( ( nBlockSize - nBreak ) * xnMulti ) * APP_ADJUST_X
         HEIGHT    ( nBlockSize - nBreak ) * APP_ADJUST_Y
