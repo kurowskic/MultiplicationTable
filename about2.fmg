@@ -55,18 +55,6 @@ DEFINE WINDOW TEMPLATE ;
     FONTCOLOR Nil
   END LABEL
 
-  DEFINE IMAGE img_APPTitle
-    ROW    2
-    COL    2
-    WIDTH  24
-    HEIGHT 24
-    PICTURE "APP_MAIN"
-    HELPID Nil
-    VISIBLE .T.
-    STRETCH .T.
-    ACTION Nil
-  END IMAGE
-
   DEFINE LABEL lbl_APPTitle
     ROW    2
     COL    35

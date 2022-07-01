@@ -206,6 +206,7 @@ PROCEDURE Main()
 
     win_Main.Title := NAZWA_PR
 
+
 #ENDIF
 
 

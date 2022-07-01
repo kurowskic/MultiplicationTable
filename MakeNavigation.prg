@@ -56,12 +56,29 @@ PROCEDURE MakeNavigation()
 
           DO CASE
             CASE cValue == "1"
+
               ACTION win_Main_label( 1 )
 
+
+#IFDEF _HMG_2_
+              ONMOUSEHOVER win_Main_lbl_OnMouseHover( 1 )
+              ONMOUSELEAVE win_Main_lbl_OnMouseLeave( 1 )
+#ENDIF
+
+
             CASE cValue == "2"
+
               ACTION win_Main_label( 2 )
 
+
+#IFDEF _HMG_2_
+              ONMOUSEHOVER win_Main_lbl_OnMouseHover( 2 )
+              ONMOUSELEAVE win_Main_lbl_OnMouseLeave( 2 )
+#ENDIF
+
+
           END CASE
+
 
           AUTOSIZE .F.
           BACKCOLOR Nil
@@ -82,8 +99,23 @@ PROCEDURE MakeNavigation()
 
   NEXT nY
 
-  win_Main.Label_Menu_1.backcolor := BLUE
-  win_Main.Label_Menu_2.backcolor := GRAY
+  win_Main.Label_Menu_1.backcolor := GRAY
+  win_Main.Label_Menu_2.backcolor := BLUE
+
+
+#IFDEF _HMG_3_
+
+
+    HMG_ChangeWindowStyle( win_Main.Label_Menu_1.HANDLE , 0x00800200 , NIL , .F. , .T. )
+    HMG_ChangeWindowStyle( win_Main.Label_Menu_2.HANDLE , 0x00800200 , NIL , .F. , .T. )
+
+
+    EventProcessAllHookMessage( EventCreate( "win_Main_lbl_OnMouseHoverLeave" , win_Main.Label_Menu_1.HANDLE ) , .T.)
+    EventProcessAllHookMessage( EventCreate( "win_Main_lbl_OnMouseHoverLeave" , win_Main.Label_Menu_2.HANDLE ) , .T.)
+
+
+#ENDIF
+
 
 RETURN
 *-----------------------------------------------------------------------------*
@@ -103,14 +135,18 @@ PROCEDURE win_Main_label( xnMulti )
   IF nField != xnMulti
 
 
+    win_Main.Label_Menu_1.Hide
+    win_Main.Label_Menu_2.Hide
+
+
     DO CASE
 
       CASE xnMulti ==  1
 
         DeleteMultiplicationTable( 2 )
 
-        win_Main.Label_Menu_1.backcolor := BLUE
-        win_Main.Label_Menu_2.backcolor := GRAY
+        win_Main.Label_Menu_1.backcolor := GRAY
+        win_Main.Label_Menu_2.backcolor := BLUE
 
         Do_Events()
         nField := 1
@@ -119,8 +155,8 @@ PROCEDURE win_Main_label( xnMulti )
 
         DeleteMultiplicationTable( 1 )
 
-        win_Main.Label_Menu_1.backcolor := GRAY
-        win_Main.Label_Menu_2.backcolor := BLUE
+        win_Main.Label_Menu_1.backcolor := BLUE
+        win_Main.Label_Menu_2.backcolor := GRAY
 
         Do_Events()
         nField := 2
@@ -130,10 +166,214 @@ PROCEDURE win_Main_label( xnMulti )
 
     MakeMultiplicationTable( xnMulti )
 
+    win_Main.Label_Menu_1.Show
+    win_Main.Label_Menu_2.Show
+
   ENDIF
 
 
 RETURN
+*-----------------------------------------------------------------------------*
+
+
+#IFDEF _HMG_2_
+*-----------------------------------------------------------------------------*
+PROCEDURE win_Main_lbl_OnMouseHover( xcLabel )
+*-----------------------------------------------------------------------------*
+
+  LOCAL RGB
+
+
+  IF xcLabel == 1
+
+
+    RGB := GetProperty ( "win_Main" , "Label_Menu_1" , "backcolor" )
+
+
+    IF RGB[1] == 000 .AND. RGB[2] == 000 .AND. RGB[3] == 255
+
+        win_Main.Label_Menu_1.backcolor := { 128 , 128 , 255 }
+
+    ENDIF
+
+
+  ENDIF
+
+
+  IF xcLabel == 2
+
+
+    RGB := GetProperty ( "win_Main" , "Label_Menu_2" , "backcolor" )
+
+
+    IF RGB[1] == 000 .AND. RGB[2] == 000 .AND. RGB[3] == 255
+
+        win_Main.Label_Menu_2.backcolor := { 128 , 128 , 255 }
+
+    ENDIF
+
+  ENDIF
+
+
+RETURN
+*-----------------------------------------------------------------------------*
+
+
+*-----------------------------------------------------------------------------*
+PROCEDURE win_Main_lbl_OnMouseLeave( xcLabel )
+*-----------------------------------------------------------------------------*
+
+  LOCAL RGB
+
+
+  IF xcLabel == 1
+
+
+    RGB := GetProperty ( "win_Main" , "Label_Menu_1" , "backcolor" )
+
+
+    IF RGB[1] == 128 .AND. RGB[2] == 128 .AND. RGB[3] == 255
+
+      win_Main.Label_Menu_1.backcolor := { 000 , 000 , 255 }
+
+    ENDIF
+
+
+  ENDIF
+
+
+  IF xcLabel == 2
+
+
+    RGB := GetProperty ( "win_Main" , "Label_Menu_2" , "backcolor" )
+
+
+    IF RGB[1] == 128 .AND. RGB[2] == 128 .AND. RGB[3] == 255
+
+      win_Main.Label_Menu_2.backcolor := { 000 , 000 , 255 }
+
+    ENDIF
+
+
+  ENDIF
+
+
+RETURN
+*-----------------------------------------------------------------------------*
+#ENDIF
+
+
+#IFDEF _HMG_3_
+*-----------------------------------------------------------------------------*
+// http://www.hmgforum.com/viewtopic.php?f=9&t=4806
+*-----------------------------------------------------------------------------*
+FUNCTION win_Main_lbl_OnMouseHoverLeave()
+*-----------------------------------------------------------------------------*
+
+  STATIC lTracking := .F.
+  LOCAL  nHWnd := EventHWND()
+  LOCAL  nMsg  := EventMSG()
+  LOCAL  cControl
+  LOCAL  cForm
+
+
+  SWITCH nMsg
+
+    CASE WM_MOUSEMOVE
+
+
+      IF ! lTracking
+
+        GetControlNameByHandle( nHWnd , @cControl , @cForm )
+
+
+        IF cControl == "Label_Menu_1"
+
+
+          RGB := GetProperty ( "win_Main" , "Label_Menu_1" , "backcolor" )
+
+
+          IF RGB[1] == 000 .AND. RGB[2] == 000 .AND. RGB[3] == 255
+
+              SetProperty( cForm , cControl , "BACKCOLOR" , { 128 , 128 , 255 } )
+
+          ENDIF
+
+
+        ENDIF
+
+
+        IF cControl == "Label_Menu_2"
+
+
+          RGB := GetProperty ( "win_Main" , "Label_Menu_2" , "backcolor" )
+
+
+          IF RGB[1] == 000 .AND. RGB[2] == 000 .AND. RGB[3] == 255
+
+            SetProperty( cForm , cControl , "BACKCOLOR" , { 128 , 128 , 255 } )
+
+
+          ENDIF
+
+        ENDIF
+
+        lTracking := TrackMouseEvent( nHWnd )  // TME_LEAVE is default flag
+
+      ENDIF
+
+
+      EXIT
+
+
+    CASE WM_MOUSELEAVE
+
+      GetControlNameByHandle( nHWnd , @cControl , @cForm )
+
+
+      IF cControl == "Label_Menu_1"
+
+
+        RGB := GetProperty ( "win_Main" , "Label_Menu_1" , "backcolor" )
+
+
+        IF RGB[1] == 128 .AND. RGB[2] == 128 .AND. RGB[3] == 255
+
+            SetProperty( cForm , cControl , "BACKCOLOR" , { 000 , 000 , 255 } )
+
+        ENDIF
+
+
+      ENDIF
+
+
+      IF cControl == "Label_Menu_2"
+
+
+        RGB := GetProperty ( "win_Main" , "Label_Menu_2" , "backcolor" )
+
+
+        IF RGB[1] == 128 .AND. RGB[2] == 128 .AND. RGB[3] == 255
+
+            SetProperty( cForm , cControl , "BACKCOLOR" , { 000 , 000 , 255 } )
+
+        ENDIF
+
+
+      ENDIF
+
+      lTracking := .F.
+
+      EXIT
+
+
+  ENDSWITCH
+
+
+RETURN NIL
+*-----------------------------------------------------------------------------*
+#ENDIF
+
 
 *-----------------------------------------------------------------------------*
 *-----------------------------------------------------------------------------*

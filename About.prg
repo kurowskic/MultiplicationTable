@@ -83,8 +83,6 @@ PROCEDURE About()
 
     AADD( aFrm, { "win_About" , win_About.Row , win_About.Col } )
 
-    win_About.img_APPTitle.Picture  := "APP_MAIN"
-
 
 #IFDEF _HMG_2_
 
