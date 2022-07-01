@@ -764,5 +764,35 @@ RETURN Nil
 *-----------------------------------------------------------------------------*
 
 
+#IFDEF _HMG_3_
+*-----------------------------------------------------------------------------*
+#pragma BEGINDUMP
+
+#include "SET_COMPILE_HMG_UNICODE.ch"
+#include "HMG_UNICODE.h"
+
+#include <windows.h>
+#include "hbapi.h"
+
+// https://msdn.microsoft.com/en-us/library/windows/desktop/ms646265(v=vs.85).aspx
+// TrackMouseEvent(nHWnd, [nFlags], [nHoverTime]) --> lSuccess
+HB_FUNC( TRACKMOUSEEVENT )
+{
+  TRACKMOUSEEVENT tmi;
+
+  tmi.cbSize      = sizeof( TRACKMOUSEEVENT );
+  tmi.dwFlags     = HB_ISNUM(3) ? (DWORD) hb_parni(2) : TME_LEAVE;
+  tmi.hwndTrack   = (HWND) HMG_parnl(1);
+  tmi.dwHoverTime = HB_ISNUM(3) ? (DWORD) hb_parni(3) : HOVER_DEFAULT;
+
+  hb_retl(TrackMouseEvent(&tmi));
+}
+
+#pragma ENDDUMP
+*-----------------------------------------------------------------------------*
+#ENDIF
+
+
+
 *-----------------------------------------------------------------------------*
 *-----------------------------------------------------------------------------*

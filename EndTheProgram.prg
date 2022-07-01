@@ -53,9 +53,6 @@ PROCEDURE EndTheProgram()
                } )
 
 
-    win_EndTheProgram.img_APPTitle.Picture  := "APP_MAIN"
-
-
 #IFDEF _HMG_2_
 
     aControls := _GetAllControlsInForm ( "win_EndTheProgram" )
