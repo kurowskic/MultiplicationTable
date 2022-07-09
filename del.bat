@@ -5,10 +5,12 @@ del *.obj
 del *.c
 del *.res
 del *.rsp
+del *.tds
 del _hmg_resconfig.h
 del errorlog.htm
 del mpt_ver.ch
 del mpt_hmg.exe
 del mpt.exe
+del mpt.log
 del temp.txt
 del *.bak

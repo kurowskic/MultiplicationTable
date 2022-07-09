@@ -1,9 +1,11 @@
 *-----------------------------------------------------------------------------*
+* MultiplicationTable | mpt_hmg.ch
+*-----------------------------------------------------------------------------*
 #include "mpt_ver.ch"
 *-----------------------------------------------------------------------------*
 
 #DEFINE  _PRG1_      '2022'
-#DEFINE  _PRG2_      '182'
+#DEFINE  _PRG2_      '190'
 #DEFINE  _PRG3_      '1'
 
 #DEFINE  _DB1_       ''
@@ -12,7 +14,7 @@
 
 
 #DEFINE  _OLD_PRG1_  '2022'
-#DEFINE  _OLD_PRG2_  '180'
+#DEFINE  _OLD_PRG2_  '182'
 #DEFINE  _OLD_PRG3_  '1'
 
 #DEFINE  _OLD_DB1_   ''
@@ -26,36 +28,26 @@
 #DEFINE WERSJA_DB    _DB1_+"."+_DB2_+"."+_DB3_
 
 
-#INCLUDE "hmg.ch"
+#INCLUDE  "hmg.ch"
 
 
 #DEFINE  FALSE .F.
 #DEFINE  TRUE  .T.
 
 
-#define CRLF CHR( 13 ) + CHR( 10 )
-#define CR CHR( 13 )
-#define LF CHR( 10 )
+#DEFINE CRLF CHR( 13 ) + CHR( 10 )
+#DEFINE CR CHR( 13 )
+#DEFINE LF CHR( 10 )
 
 
-#IFDEF _HMG_2_
+#IFNDEF __XHARBOUR__
 
-  #define HTCAPTION             2
-  #define WM_NCLBUTTONDOWN    161
-
-  #define EM_SETCUEBANNER  0x1501
-
-#ENDIF
-
-
-#ifndef __XHARBOUR__
-
-   #xcommand TRY                => bError := errorBlock( {|oError| break( oError ) } ) ;;
+   #XCOMMAND TRY                => bError := errorBlock( {|oError| break( oError ) } ) ;;
                                    BEGIN SEQUENCE
-   #xcommand CATCH [<!oError!>] => errorBlock( bError ) ;;
+   #XCOMMAND CATCH [<!oError!>] => errorBlock( bError ) ;;
                                    RECOVER [USING <oError>] <-oError-> ;;
                                    errorBlock( bError )
-#endif
+#ENDIF
 
 
 MEMVAR APP_ROW
@@ -63,6 +55,8 @@ MEMVAR APP_COL
 MEMVAR APP_HEIGHT
 MEMVAR APP_WIDTH
 MEMVAR aFrm
+*-----------------------------------------------------------------------------*
+
 
 *-----------------------------------------------------------------------------*
 *-----------------------------------------------------------------------------*

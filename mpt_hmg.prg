@@ -1,4 +1,6 @@
 *-----------------------------------------------------------------------------*
+* MultiplicationTable | mpt_hmg.prg
+*-----------------------------------------------------------------------------*
 #include "mpt_hmg.ch"
 *-----------------------------------------------------------------------------*
 
@@ -90,7 +92,6 @@ PROCEDURE Main()
 
   ERRORLEVEL( 0 )
 
-
   aControls := {}
   aFrmControls := {}
   aFormProperty := {}
@@ -122,6 +123,7 @@ PROCEDURE Main()
       fTIMES   := 'Times New Roman'
       fCALIBRI := 'Calibri'
 
+
     CASE "Windows NT 10" $ OS()
 
       fARIAL   := 'Arial'
@@ -129,6 +131,7 @@ PROCEDURE Main()
       fTAHOMA  := 'Tahoma'
       fTIMES   := 'Times New Roman'
       fCALIBRI := 'Calibri'
+
 
     CASE "Windows 8" $ OS()
 
@@ -138,6 +141,7 @@ PROCEDURE Main()
       fTIMES   := 'Times New Roman'
       fCALIBRI := 'Calibri'
 
+
     CASE "Windows 7" $ OS()
 
       fARIAL   := 'Arial'
@@ -146,12 +150,15 @@ PROCEDURE Main()
       fTIMES   := 'Times New Roman'
       fCALIBRI := 'Calibri'
 
+
     CASE "Windows XP" $ OS()
+
       fARIAL   := 'Arial'
       fCOURIER := 'Courier New'
       fTAHOMA  := 'Tahoma'
       fTIMES   := 'Times New Roman'
       fCALIBRI := 'Calibri'
+
 
     CASE "Windows NT" $ OS()
 
@@ -161,6 +168,7 @@ PROCEDURE Main()
       fTIMES   := 'Times New Roman CE'
       fCALIBRI := 'Times New Roman CE'
 
+
     CASE "Windows 98" $ OS()
 
       fARIAL   := 'Arial'
@@ -168,6 +176,7 @@ PROCEDURE Main()
       fTAHOMA  := 'Tahoma'
       fTIMES   := 'Times New Roman'
       fCALIBRI := 'Times New Roman'
+
 
   END CASE
 
@@ -205,7 +214,6 @@ PROCEDURE Main()
 #IFDEF _HMG_3_
 
     win_Main.Title := NAZWA_PR
-
 
 #ENDIF
 
@@ -292,7 +300,6 @@ PROCEDURE Main()
 
     Do_Events()
 
-
     AADD( aFrm , { "win_Main" , win_Main.Row , win_Main.Col } )
 
     ON KEY ALT+F4 OF win_Main ACTION { || EndTheProgram() }
@@ -312,7 +319,6 @@ PROCEDURE Main()
     win_Main.btn_MinPR.Picture       := 'APP_MINI_20'
     win_Main.btn_ExitPR.Picture      := 'APP_EXIT_20'
 
-
     SetProperty( "win_Main" , "btn_About"  , "Col" , APP_WIDTH - INT( 105 * APP_ADJUST_X ) - 16 )
     SetProperty( "win_Main" , "btn_MinPR"  , "Col" , APP_WIDTH - INT(  70 * APP_ADJUST_X ) - 08 )
     SetProperty( "win_Main" , "btn_ExitPR" , "Col" , APP_WIDTH - INT(  35 * APP_ADJUST_X ) - 02 )
@@ -331,14 +337,14 @@ PROCEDURE Main()
 
 #IFDEF _HMG_2_
 
-    aControls := _GetAllControlsInForm ( "win_Main" )
+    aControls := _GetAllControlsInForm( "win_Main" )
 
 #ENDIF
 
 
 #IFDEF _HMG_3_
 
-    aControls := _GetArrayOfAllControlsForForm ( "win_Main" )
+    aControls := _GetArrayOfAllControlsForForm( "win_Main" )
 
 #ENDIF
 
@@ -346,23 +352,24 @@ PROCEDURE Main()
     FOR nI := 1 TO LEN( aControls )
 
       AADD( aFrmControls ,;
-      { "win_Main" , aControls[ nI ] ,;
-      GetProperty( "win_Main" , aControls[ nI ] , "Row" ) ,;
-      GetProperty( "win_Main" , aControls[ nI ] , "Col" ) ,;
-      GetProperty( "win_Main" , aControls[ nI ] , "Width" ) ,;
-      GetProperty( "win_Main" , aControls[ nI ] , "Height" ) ,;
-      GetProperty( "win_Main" , aControls[ nI ] , "FontSize" ) } )
+      { "win_Main" ,;
+        aControls[ nI ] ,;
+        GetProperty( "win_Main" , aControls[ nI ] , "Row"      ) ,;
+        GetProperty( "win_Main" , aControls[ nI ] , "Col"      ) ,;
+        GetProperty( "win_Main" , aControls[ nI ] , "Width"    ) ,;
+        GetProperty( "win_Main" , aControls[ nI ] , "Height"   ) ,;
+        GetProperty( "win_Main" , aControls[ nI ] , "FontSize" )  ;
+      } )
 
     NEXT nI
 
 
     AADD( aFormProperty ,;
-    { ;
-      "win_Main" ,;
-      GetProperty( "win_Main" , "Row" ) ,;
-      GetProperty( "win_Main" , "Col" ) ,;
-      GetProperty( "win_Main" , "Width" ) ,;
-      GetProperty( "win_Main" , "Height" ),;
+    { "win_Main" ,;
+      GetProperty( "win_Main" , "Row"    ) ,;
+      GetProperty( "win_Main" , "Col"    ) ,;
+      GetProperty( "win_Main" , "Width"  ) ,;
+      GetProperty( "win_Main" , "Height" )  ;
     } )
 
     win_Main.Activate
@@ -372,6 +379,7 @@ PROCEDURE Main()
     win_Main.Show
 
   ENDIF
+
 
 RETURN
 *-----------------------------------------------------------------------------*

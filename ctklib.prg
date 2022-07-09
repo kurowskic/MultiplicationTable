@@ -1,4 +1,6 @@
 *-----------------------------------------------------------------------------*
+* MultiplicationTable | ctklib.prg
+*-----------------------------------------------------------------------------*
 #include "mpt_hmg.ch"
 *-----------------------------------------------------------------------------*
 
@@ -205,13 +207,13 @@ FUNCTION CTK_Release( xaFrm )
 
   IF nFrm > 1
 
-    xaFrm[ nFrm , 1 ] := NIL
+    xaFrm[ nFrm , 1 ] := Nil
 
 
     FOR nI := 1 TO nFrm
 
 
-      IF xaFrm[ nI , 1 ] <> NIL
+      IF xaFrm[ nI , 1 ] <> Nil
 
         AADD( aLocal , { xaFrm[ nI , 1 ] , xaFrm[ nI , 2 ] , xaFrm[ nI , 3 ] } )
 
@@ -314,46 +316,16 @@ PROCEDURE SetCenterModalWindow( xaFormControl )
     SetProperty( xaFormControl[ 1 , 1 ] , "Col" , INT( APP_COL + ( APP_WIDTH  - GetProperty( xaFormControl[ 1 , 1 ] , "Width"  ) ) / 2 ) )
 
 
-#IFDEF __LOG__
-
-  LogApp( "======" )
-  LogApp( " GetDesktopRealWidth() > win_Main.Width" )
-  LogApp( any2str( INT( GetDesktopRealWidth() ) ) + " / " + any2str( INT( win_Main.Width ) ) )
-  LogApp( "======" )
-
-#ENDIF
-
-
     CASE INT( GetDesktopRealWidth() ) < INT( win_Main.Width )
 
       SetProperty( xaFormControl[ 1 , 1 ] , "Row" , INT( (  APP_ROW  ) + ( GetDesktopRealHeight() - win_Main.Height )  / 2 ) )
       SetProperty( xaFormControl[ 1 , 1 ] , "Col" , INT( (  APP_COL  ) + ( GetDesktopRealWidth()  - win_Main.Width  )  / 2 ) )
 
 
-#IFDEF __LOG__
-
-  LogApp( "======" )
-  LogApp( "GetDesktopRealWidth() < win_Main.Width" )
-  LogApp( any2str( INT( GetDesktopRealWidth() ) ) + " / " + any2str( INT( win_Main.Width ) ) )
-  LogApp( "======" )
-
-#ENDIF
-
-
     CASE INT( GetDesktopRealWidth() ) == INT( win_Main.Width )
 
       SetProperty( xaFormControl[ 1 , 1 ] , "Row" , INT( ( GetDesktopRealHeight() - GetProperty( xaFormControl[ 1 , 1 ] , "Height" ) ) / 2 ) )
       SetProperty( xaFormControl[ 1 , 1 ] , "Col" , INT( ( GetDesktopRealWidth()  - GetProperty( xaFormControl[ 1 , 1 ] , "Width"  ) ) / 2 ) )
-
-
-#IFDEF __LOG__
-
-  LogApp( "======" )
-  LogApp( "GetDesktopRealWidth() == win_Main.Width" )
-  LogApp( any2str( INT( GetDesktopRealWidth() ) ) + " / " + any2str( INT( win_Main.Width ) ) )
-  LogApp( "======" )
-
-#ENDIF
 
 
   END CASE
@@ -369,17 +341,10 @@ RETURN
 PROCEDURE CheckMainResolution()
 *-----------------------------------------------------------------------------*
 
-#IFDEF __LOG__
-
-  LogApp( "<---CheckMainResolution()--->" )
-
-#ENDIF
-
     APP_ROW    := GetProperty( "win_Main" , "Row" )
     APP_COL    := GetProperty( "win_Main" , "Col" )
     APP_HEIGHT := GetProperty( "win_Main" , "Height" )
     APP_WIDTH  := GetProperty( "win_Main" , "Width" )
-
 
     APP_ADJUST_Y :=  ( GetDesktopRealHeight() / APP_HEIGHT )
     SetProperty( "win_Main" , "Height" , GetProperty( "win_Main" , "Height" ) * APP_ADJUST_Y )
@@ -439,7 +404,7 @@ RETURN
 PROCEDURE MoveActiveWindow( cForm )
 *------------------------------------------------------------------------------*
 
-  LOCAL hWnd 
+  LOCAL hWnd
 
   LOCAL nMouseRow      := GetCursorRow()
   LOCAL nMouseCol      := GetCursorCol()
@@ -456,13 +421,6 @@ PROCEDURE MoveActiveWindow( cForm )
   DEFAULT hWnd := GetActiveWindow()
 
   DECLARE WINDOW win_Main
-
-
-#IFDEF __LOG__
-
- LogApp( "MoveActiveWindow()" )
-
-#ENDIF
 
 
   IF nMouseRow >= nFormRow .AND. nMouseRow <= ( nFormRow + 80 - 1 )
@@ -740,7 +698,7 @@ FUNCTION AddCtrl( nIndx )
 
   If !EMPTY( _HMG_SYSDATA [ 2 ] [ nIndx ] )
 
-    If ASCAN( aRetVal2, _HMG_SYSDATA [ 2 ] [ nIndx ] ) == 0
+    If ASCAN( aRetVal2 , _HMG_SYSDATA [ 2 ] [ nIndx ] ) == 0
 
       IF !EMPTY( _HMG_SYSDATA [ 3 ] [ nIndx ] )
 
@@ -791,7 +749,6 @@ HB_FUNC( TRACKMOUSEEVENT )
 #pragma ENDDUMP
 *-----------------------------------------------------------------------------*
 #ENDIF
-
 
 
 *-----------------------------------------------------------------------------*

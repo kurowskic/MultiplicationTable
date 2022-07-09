@@ -1,17 +1,20 @@
-//
+//---------------------------------------------------------------------------//
+// MultiplicationTable | mpt_hmg3._rc
+//---------------------------------------------------------------------------//
 
 MAINICON            ICON   resource\mpt.ico
 
 APP_MAIN            BITMAP resource\mpt.bmp
 
 APP_INFO_20         BITMAP resource\app_info_20.bmp
+APP_MINI_20         BITMAP resource\app_mini_20.bmp
 APP_EXIT_20         BITMAP resource\app_exit_20.bmp
 
 APP_BACKGROUND      JPG resource\table.jpg
 
 1 VERSIONINFO
-FILEVERSION 2022,182,1,0
-PRODUCTVERSION 2022,182,1,0
+FILEVERSION 2022,190,1,0
+PRODUCTVERSION 2022,190,1,0
 FILEOS 0x4
 FILETYPE 0x1
 {
@@ -20,14 +23,14 @@ BLOCK "StringFileInfo"
   BLOCK "041504b0"
   {
    VALUE "FileDescription" , "Multiplication Table\000"
-   VALUE "FileVersion"     , "2022.182.1\000"
+   VALUE "FileVersion"     , "2022.190.1\000"
    VALUE "InternalName"    , "Multiplication Table\000"
    VALUE "LegalCopyright"  , "LC\000"
    VALUE "LegalTrademarks" , "LT\000"
    VALUE "OriginalFilename", "mpt_hmg.exe\000"
    VALUE "CompanyName"     , "CN\000"
    VALUE "ProductName"     , "Multiplication Table\000"
-   VALUE "ProductVersion"  , "2022.182.1\000"
+   VALUE "ProductVersion"  , "2022.190.1\000"
    VALUE "Comments"        , "Comments\000"
   }
 }
@@ -37,3 +40,8 @@ BLOCK "VarFileInfo"
   VALUE "Translation", 0x0415, 0x04B0
 }
 }
+//---------------------------------------------------------------------------//
+
+
+//---------------------------------------------------------------------------//
+//---------------------------------------------------------------------------//
