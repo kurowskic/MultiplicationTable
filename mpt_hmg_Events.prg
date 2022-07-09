@@ -1,4 +1,9 @@
 *-----------------------------------------------------------------------------*
+* MultiplicationTable | mpt_hmg_Events.prg
+*-----------------------------------------------------------------------------*
+
+
+*-----------------------------------------------------------------------------*
 PROCEDURE win_main_OnInit()
 *-----------------------------------------------------------------------------*
 
@@ -14,7 +19,6 @@ PROCEDURE win_main_OnInit()
   CTK_DrawBorder( "win_Main" )
 
   win_Main.Show
-
   DO_Events()
 
   win_Main_buttons_Disable()
@@ -46,7 +50,6 @@ PROCEDURE win_main_OnMouseClick()
 
 RETURN
 *-----------------------------------------------------------------------------*
-
 
 
 *-----------------------------------------------------------------------------*
@@ -113,8 +116,8 @@ RETURN
 PROCEDURE win_Main_buttons_Disable()
 *-----------------------------------------------------------------------------*
 
-  win_Main.btn_about.Enabled       := FALSE
-  win_Main.btn_minPR.Enabled       := FALSE
+  win_Main.btn_About.Enabled       := FALSE
+  win_Main.btn_MinPR.Enabled       := FALSE
   win_Main.btn_ExitPR.Enabled      := FALSE
 
 RETURN
@@ -125,8 +128,8 @@ RETURN
 PROCEDURE win_Main_buttons_Enable()
 *-----------------------------------------------------------------------------*
 
-  win_Main.btn_about.Enabled       := TRUE
-  win_Main.btn_minPR.Enabled       := TRUE
+  win_Main.btn_About.Enabled       := TRUE
+  win_Main.btn_MinPR.Enabled       := TRUE
   win_Main.btn_ExitPR.Enabled      := TRUE
 
 RETURN

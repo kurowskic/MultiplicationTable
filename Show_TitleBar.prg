@@ -1,4 +1,6 @@
 *-----------------------------------------------------------------------------*
+* MultiplicationTable | Show_TitleBar.prg
+*-----------------------------------------------------------------------------*
 #include "mpt_hmg.ch"
 *-----------------------------------------------------------------------------*
 
@@ -25,8 +27,6 @@ PROCEDURE Show_TitleBar()
 
   hBG := BT_BitmapLoadFile( "APP_BACKGROUND" )
   BT_DrawBitMap( hDC , 36 * APP_ADJUST_Y , 1 * APP_ADJUST_X , 1534 * APP_ADJUST_Y , 800 * APP_ADJUST_X , BT_SCALE , hBG )
-
-//  BT_DrawFillRectangle( hDC , 2 * APP_ADJUST_Y , 0 * APP_ADJUST_X , 1534 * APP_ADJUST_X , 34 * APP_ADJUST_Y , BLUE , BLUE , 1 )
 
   hBMP := BT_BitmapLoadFile( "APP_MAIN" )
   BT_DrawBitMap( hDC , 2 * APP_ADJUST_Y , 2 * APP_ADJUST_X , 32 * APP_ADJUST_Y , 32 * APP_ADJUST_X , BT_SCALE , hBMP )

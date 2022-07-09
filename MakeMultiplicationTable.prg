@@ -1,4 +1,6 @@
 *-----------------------------------------------------------------------------*
+* MultiplicationTable | MakeMultiplicationTable.prg
+*-----------------------------------------------------------------------------*
 #include "mpt_hmg.ch"
 *-----------------------------------------------------------------------------*
 
@@ -79,13 +81,19 @@ PROCEDURE MakeMultiplicationTable( xnMulti )
         BACKCOLOR YELLOW
         FONTCOLOR Nil
         CENTERALIGN .T.
+        
+        
 #IFDEF _HMG_2_
+
         VCENTERALIGN .T.
+
 #ENDIF
+
+
         BORDER .T.
         END LABEL
 
-        SetProperty( "win_Main" , cLabel , "backcolor" , YELLOW )
+        SetProperty( "win_Main" , cLabel , "BackColor" , YELLOW )
         Do_Events()
 
       ENDIF
@@ -134,14 +142,20 @@ PROCEDURE MakeMultiplicationTable( xnMulti )
         BACKCOLOR BLUE
         FONTCOLOR Nil
         CENTERALIGN .T.
+        
+        
 #IFDEF _HMG_2_
+
         VCENTERALIGN .T.
+
 #ENDIF
+
+
         BORDER .T.
         END LABEL
 
 
-        SetProperty( "win_Main" , cLabel , "backcolor" , BLUE )
+        SetProperty( "win_Main" , cLabel , "BackColor" , BLUE )
         Do_Events()
 
       ENDIF
@@ -200,14 +214,20 @@ PROCEDURE MakeMultiplicationTable( xnMulti )
         BACKCOLOR GREEN
         FONTCOLOR Nil
         CENTERALIGN .T.
+
+
 #IFDEF _HMG_2_
+
         VCENTERALIGN .T.
+
 #ENDIF
+
+
         BORDER .T.
         END LABEL
 
 
-        SetProperty( "win_Main" , cLabel , "backcolor" , GREEN )
+        SetProperty( "win_Main" , cLabel , "BackColor" , GREEN )
         Do_Events()
 
 
