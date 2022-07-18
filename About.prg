@@ -53,11 +53,11 @@ PROCEDURE About()
 
     IF "MiniGUI" $ MiniGUIVersion()
 
-      SetProperty( "win_About" , "lbl_3"    , "Value"   , "http://hmgextended.com" )
+      SetProperty( "win_About" , "lbl_3"  , "Value"   , "http://hmgextended.com"   )
 
     ELSE
 
-      SetProperty( "win_About" , "lbl_3"    , "Value"   , "http://www.hmgforum.com/" )
+      SetProperty( "win_About" , "lbl_3"  , "Value"   , "http://www.hmgforum.com/" )
 
     ENDIF
 
@@ -69,18 +69,16 @@ PROCEDURE About()
 
     IF "Borland" $ HB_COMPILER()
 
-      SetProperty( "win_About" , "lbl_7"    , "Value"   , "https://www.embarcadero.com/free-tools/ccompiler/free-download" )
+      SetProperty( "win_About" , "lbl_7"  , "Value"   , "https://www.embarcadero.com/free-tools/ccompiler/free-download" )
 
     ELSE
 
-      SetProperty( "win_About" , "lbl_7"    , "Value"   , "https://sourceforge.net/projects/mingw-w64/" )
+      SetProperty( "win_About" , "lbl_7"  , "Value"   , "https://sourceforge.net/projects/mingw-w64/" )
 
     ENDIF
 
 
-    SetProperty( "win_About" , "btn_OK"   , "Caption" , 'OK' )
-
-    ON KEY ALT+F4 OF win_About ACTION { || Nil }
+    ON KEY ALT + F4 OF win_About ACTION { || Nil }
 
     AADD( aFrm, { "win_About" , win_About.Row , win_About.Col } )
 
