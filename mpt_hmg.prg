@@ -303,7 +303,7 @@ PROCEDURE Main()
     AADD( aFrm , { "win_Main" , win_Main.Row , win_Main.Col } )
 
     ON KEY ALT+F4 OF win_Main ACTION { || EndTheProgram() }
-    ON KEY F2     OF win_Main ACTION { || SetCenterMainWindow()    }
+    ON KEY F2     OF win_Main ACTION { || SetCenterMainWindow() }
 
 
 #IFDEF _HMG_2_

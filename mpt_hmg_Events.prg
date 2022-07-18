@@ -80,7 +80,7 @@ PROCEDURE win_Main_btn_About_Action()
   About()
 
   DO_Events()
-  win_Main.Setfocus()
+  win_Main.SetFocus()
 
 RETURN
 *-----------------------------------------------------------------------------*
@@ -93,7 +93,7 @@ PROCEDURE win_Main_btn_ExitPR()
   EndTheProgram()
 
   Do_Events()
-  win_Main.Setfocus()
+  win_Main.SetFocus()
 
 RETURN
 *-----------------------------------------------------------------------------*
@@ -106,7 +106,7 @@ PROCEDURE win_Main_btn_MinPR()
   aFrm := CTK_Minimize( aFrm )
 
   Do_Events()
-  win_Main.Setfocus()
+  win_Main.SetFocus()
 
 RETURN
 *-----------------------------------------------------------------------------*
