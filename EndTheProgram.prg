@@ -44,11 +44,7 @@ PROCEDURE EndTheProgram()
 #ENDIF
 
 
-    SetProperty( "win_EndTheProgram" , "btn_YES" , "Action" , { || win_EndTheProgram_btn_YES() } )
-    SetProperty( "win_EndTheProgram" , "btn_NOT" , "Action" , { || win_EndTheProgram_btn_NOT() } )
-
-
-    ON KEY ALT+F4 OF win_EndTheProgram ACTION { || Nil }
+    ON KEY ALT + F4 OF win_EndTheProgram ACTION { || Nil }
 
 
     AADD( aFrm , ;

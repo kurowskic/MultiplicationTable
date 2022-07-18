@@ -101,8 +101,8 @@ PROCEDURE MakeNavigation()
 
   NEXT nY
 
-  win_Main.Label_Menu_1.backcolor := GRAY
-  win_Main.Label_Menu_2.backcolor := BLUE
+  win_Main.Label_Menu_1.BackColor := GRAY
+  win_Main.Label_Menu_2.BackColor := BLUE
 
 
 #IFDEF _HMG_3_
@@ -131,7 +131,7 @@ PROCEDURE win_Main_label( xnMulti )
   DECLARE WINDOW win_Main
 
   Do_Events()
-  win_Main.Setfocus()
+  win_Main.SetFocus()
 
 
   IF nField != xnMulti
@@ -147,8 +147,8 @@ PROCEDURE win_Main_label( xnMulti )
 
         DeleteMultiplicationTable( 2 )
 
-        win_Main.Label_Menu_1.backcolor := GRAY
-        win_Main.Label_Menu_2.backcolor := BLUE
+        win_Main.Label_Menu_1.BackColor := GRAY
+        win_Main.Label_Menu_2.BackColor := BLUE
 
         Do_Events()
         nField := 1
@@ -157,8 +157,8 @@ PROCEDURE win_Main_label( xnMulti )
 
         DeleteMultiplicationTable( 1 )
 
-        win_Main.Label_Menu_1.backcolor := BLUE
-        win_Main.Label_Menu_2.backcolor := GRAY
+        win_Main.Label_Menu_1.BackColor := BLUE
+        win_Main.Label_Menu_2.BackColor := GRAY
 
         Do_Events()
         nField := 2
@@ -189,12 +189,12 @@ PROCEDURE win_Main_lbl_OnMouseHover( xcLabel )
   IF xcLabel == 1
 
 
-    RGB := GetProperty ( "win_Main" , "Label_Menu_1" , "backcolor" )
+    RGB := GetProperty ( "win_Main" , "Label_Menu_1" , "BackColor" )
 
 
-    IF RGB[1] == 000 .AND. RGB[2] == 000 .AND. RGB[3] == 255
+    IF RGB[ 1 ] == 000 .AND. RGB[ 2 ] == 000 .AND. RGB[ 3 ] == 255
 
-        win_Main.Label_Menu_1.backcolor := { 128 , 128 , 255 }
+        win_Main.Label_Menu_1.BackColor := { 128 , 128 , 255 }
 
     ENDIF
 
@@ -205,12 +205,12 @@ PROCEDURE win_Main_lbl_OnMouseHover( xcLabel )
   IF xcLabel == 2
 
 
-    RGB := GetProperty ( "win_Main" , "Label_Menu_2" , "backcolor" )
+    RGB := GetProperty ( "win_Main" , "Label_Menu_2" , "BackColor" )
 
 
-    IF RGB[1] == 000 .AND. RGB[2] == 000 .AND. RGB[3] == 255
+    IF RGB[ 1 ] == 000 .AND. RGB[ 2 ] == 000 .AND. RGB[ 3 ] == 255
 
-        win_Main.Label_Menu_2.backcolor := { 128 , 128 , 255 }
+        win_Main.Label_Menu_2.BackColor := { 128 , 128 , 255 }
 
     ENDIF
 
@@ -231,12 +231,12 @@ PROCEDURE win_Main_lbl_OnMouseLeave( xcLabel )
   IF xcLabel == 1
 
 
-    RGB := GetProperty ( "win_Main" , "Label_Menu_1" , "backcolor" )
+    RGB := GetProperty ( "win_Main" , "Label_Menu_1" , "BackColor" )
 
 
-    IF RGB[1] == 128 .AND. RGB[2] == 128 .AND. RGB[3] == 255
+    IF RGB[ 1 ] == 128 .AND. RGB[ 2 ] == 128 .AND. RGB[ 3 ] == 255
 
-      win_Main.Label_Menu_1.backcolor := { 000 , 000 , 255 }
+      win_Main.Label_Menu_1.BackColor := { 000 , 000 , 255 }
 
     ENDIF
 
@@ -247,12 +247,12 @@ PROCEDURE win_Main_lbl_OnMouseLeave( xcLabel )
   IF xcLabel == 2
 
 
-    RGB := GetProperty ( "win_Main" , "Label_Menu_2" , "backcolor" )
+    RGB := GetProperty ( "win_Main" , "Label_Menu_2" , "BackColor" )
 
 
-    IF RGB[1] == 128 .AND. RGB[2] == 128 .AND. RGB[3] == 255
+    IF RGB[ 1 ] == 128 .AND. RGB[ 2 ] == 128 .AND. RGB[ 3 ] == 255
 
-      win_Main.Label_Menu_2.backcolor := { 000 , 000 , 255 }
+      win_Main.Label_Menu_2.BackColor := { 000 , 000 , 255 }
 
     ENDIF
 
@@ -292,12 +292,12 @@ FUNCTION win_Main_lbl_OnMouseHoverLeave()
         IF cControl == "Label_Menu_1"
 
 
-          RGB := GetProperty ( "win_Main" , "Label_Menu_1" , "backcolor" )
+          RGB := GetProperty ( "win_Main" , "Label_Menu_1" , "BackColor" )
 
 
-          IF RGB[1] == 000 .AND. RGB[2] == 000 .AND. RGB[3] == 255
+          IF RGB[ 1 ] == 000 .AND. RGB[ 2 ] == 000 .AND. RGB[ 3 ] == 255
 
-              SetProperty( cForm , cControl , "BACKCOLOR" , { 128 , 128 , 255 } )
+              SetProperty( cForm , cControl , "BackColor" , { 128 , 128 , 255 } )
 
           ENDIF
 
@@ -308,12 +308,12 @@ FUNCTION win_Main_lbl_OnMouseHoverLeave()
         IF cControl == "Label_Menu_2"
 
 
-          RGB := GetProperty ( "win_Main" , "Label_Menu_2" , "backcolor" )
+          RGB := GetProperty ( "win_Main" , "Label_Menu_2" , "BackColor" )
 
 
-          IF RGB[1] == 000 .AND. RGB[2] == 000 .AND. RGB[3] == 255
+          IF RGB[ 1 ] == 000 .AND. RGB[ 2 ] == 000 .AND. RGB[ 3 ] == 255
 
-            SetProperty( cForm , cControl , "BACKCOLOR" , { 128 , 128 , 255 } )
+            SetProperty( cForm , cControl , "BackColor" , { 128 , 128 , 255 } )
 
 
           ENDIF
@@ -336,12 +336,12 @@ FUNCTION win_Main_lbl_OnMouseHoverLeave()
       IF cControl == "Label_Menu_1"
 
 
-        RGB := GetProperty ( "win_Main" , "Label_Menu_1" , "backcolor" )
+        RGB := GetProperty ( "win_Main" , "Label_Menu_1" , "BackColor" )
 
 
-        IF RGB[1] == 128 .AND. RGB[2] == 128 .AND. RGB[3] == 255
+        IF RGB[ 1 ] == 128 .AND. RGB[ 2 ] == 128 .AND. RGB[ 3 ] == 255
 
-            SetProperty( cForm , cControl , "BACKCOLOR" , { 000 , 000 , 255 } )
+            SetProperty( cForm , cControl , "BackColor" , { 000 , 000 , 255 } )
 
         ENDIF
 
@@ -352,12 +352,12 @@ FUNCTION win_Main_lbl_OnMouseHoverLeave()
       IF cControl == "Label_Menu_2"
 
 
-        RGB := GetProperty ( "win_Main" , "Label_Menu_2" , "backcolor" )
+        RGB := GetProperty ( "win_Main" , "Label_Menu_2" , "BackColor" )
 
 
-        IF RGB[1] == 128 .AND. RGB[2] == 128 .AND. RGB[3] == 255
+        IF RGB[ 1 ] == 128 .AND. RGB[ 2 ] == 128 .AND. RGB[ 3 ] == 255
 
-            SetProperty( cForm , cControl , "BACKCOLOR" , { 000 , 000 , 255 } )
+            SetProperty( cForm , cControl , "BackColor" , { 000 , 000 , 255 } )
 
         ENDIF
 
